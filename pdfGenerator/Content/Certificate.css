@@ -1,0 +1,104 @@
+﻿th {
+    font-weight: normal;
+}
+
+.section-head {
+    background-color: #707070;
+    color: #fff;
+    padding: 5px 0 5px 10px;
+    text-transform: uppercase;
+}
+
+.page-title {
+    font-size: 24px;
+    letter-spacing: -.25px;
+}
+
+.A4 {
+    width: 25cm;
+    height: 29.7cm;
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.col-sub-section-4 {
+    width: 6cm;
+    margin: 10px 0 10px 10px;
+}
+
+.col-sub-section-3 {
+    width: 5cm;
+    margin: 10px 0 10px 10px;
+}
+
+.sub-section-head {
+    text-transform: uppercase;
+    background: none;
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 0;
+}
+
+.sub-section-content {
+    font-size: 13px;
+    letter-spacing: -.25px;
+    font-weight: 600;
+}
+
+.content-row {
+    padding-bottom: 30px;
+}
+
+.certificate-wrapper .header {
+    background-color: #e2e2e2;
+    color: #5b5b5b;
+    padding: 5px 0 5px 10px;
+    text-transform: uppercase;
+}
+
+.certificate-wrapper .content {
+    width: 100%;
+}
+
+.table-data tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.certificate-wrapper .inlet {
+    width: 11cm;
+}
+
+.certificate-wrapper .gas {
+    width: 4cm;
+}
+
+.certificate-wrapper .concentrate {
+    width: 9cm;
+}
+
+.certificate-wrapper .content .content-item {
+    display: inline-block;
+    padding: 10px;
+    width: 3.33cm;
+}
+
+.padding-top-bottom {
+    padding: 10px 0;
+}
+
+.section-sub-head {
+    background-color: #e2e2e2;
+    color: #5b5b5b;
+}
+
+.padding-left {
+    padding-left: 10px;
+}
+
+table, tr, td, th, tbody, thead, tfoot {
+    page-break-inside: avoid !important;
+}

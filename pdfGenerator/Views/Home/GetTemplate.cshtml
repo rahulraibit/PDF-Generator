@@ -1,0 +1,523 @@
+﻿@using System.Drawing.Imaging
+@model pdfGenerator.Models.CertificateTemplet
+
+@{
+    Layout = null;
+    var imgSrc = "";
+    if (Model.PieData != null)
+    {
+        imgSrc = $"data:image/gif;base64,{Model.PieData}";
+    }
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Certificate.css" rel="stylesheet" />
+    <link href="c:\users\h188752\documents\visual studio 2015\Projects\pdfGenerator\pdfGenerator\Content\bootstrap.min.css" rel="stylesheet" />
+    <link href="c:\users\h188752\documents\visual studio 2015\Projects\pdfGenerator\pdfGenerator\Content\Certificate.css" rel="stylesheet" />
+    <style type="text/css">
+    </style>
+</head>
+<body>
+    <div class="container A4">
+        @*Page header*@
+        <div>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="page-title"> Bump Certificate</div>
+                        </td>
+                        <td>
+                            <div class="page-title text-right">
+                                Generated On:
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <div class="page-title text-right">
+                                By:
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        @*Page Summary*@
+
+        <table class="table-data">
+            <thead>
+                <tr>
+                    <th colspan="3">
+                        <div class="section-head"> CALIBRATION SUMMARY</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="content-row">
+                    <td>
+                        <div class="col-sub-section-4">
+                            <div class="sub-section-head">CALIBRATION PERFORMED ON</div>
+                            <div class="sub-section-content">01/01/2015 2:18</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-sub-section-4">
+                            <div class="sub-section-head">FRESHAIR CALIBRATION</div>
+                            <div class="sub-section-content">01/01/2015 2:18</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-sub-section-4">
+                            <div class="sub-section-head">RECOMMENDED ACTION</div>
+                            <div class="sub-section-content">01/01/2015 2:18</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="content-row">
+                    <td>
+                        <div class="col-sub-section-4">
+                            <div class="sub-section-head">ZERO CALIBRATION</div>
+                            <div class="sub-section-content">01/01/2015 2:18</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-sub-section-4">
+                            <div class="sub-section-head">SPAN CALIBRATION</div>
+                            <div class="sub-section-content">01/01/2015 2:18</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-sub-section-4">
+                            <div class="sub-section-head">SPAN 2 CALIBRATION</div>
+                            <div class="sub-section-content">01/01/2015 2:18</div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        @*Test Data*@
+
+        <table class="table-data">
+            <thead>
+                <tr>
+                    <th colspan="3">
+                        <div class="section-head"> INSTRUMENT TESTED</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="content-row">
+                    <td>
+                        <div class="col-sub-section-4">
+                            <div class="sub-section-head">PRODUCT NAME</div>
+                            <div class="sub-section-content">01/01/2015 2:18</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-sub-section-4">
+                            <div class="sub-section-head">MODEL NAME</div>
+                            <div class="sub-section-content">01/01/2015 2:18</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-sub-section-4">
+                            <div class="sub-section-head">SERIAL NUMBER</div>
+                            <div class="sub-section-content">01/01/2015 2:18</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="content-row">
+                    <td>
+                        <div class="col-sub-section-4">
+                            <div class="sub-section-head"></div>
+                            <div class="sub-section-content">-</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-sub-section-4">
+                            <div class="sub-section-head"></div>
+                            <div class="sub-section-content">-</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-sub-section-4">
+                            <div class="sub-section-head">FIRMWARE</div>
+                            <div class="sub-section-content">V8.6.4.6</div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        @*Test Result*@
+        <table class="table-data">
+            <thead>
+                <tr>
+                    <th colspan="3">
+                        <div class="section-head"> BUMP TEST DETAILED RESULTS</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="content-row">
+                    <td>
+                        <div class="col-sub-section-4">
+                            <div class="sub-section-head">AUDIBLE ALARM</div>
+                            <div class="sub-section-content">Success</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-sub-section-4">
+                            <div class="sub-section-head">VISUAL ALARM</div>
+                            <div class="sub-section-content">01/01/2015 2:18</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-sub-section-4">
+                            <div class="sub-section-head">VIBRATOR ALARM</div>
+                            <div class="sub-section-content">01/01/2015 2:18</div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        @*Inlet Info*@
+        <div class="certificate-wrapper">
+            <table class="table-data">
+                <thead>
+                    <tr>
+                        <th>
+                            <div class="header inlet">INLET INFORMATION</div>
+                        </th>
+                        <th>
+                            <div class="header gas">GAS</div>
+                        </th>
+                        <th>
+                            <div class="header concentrate">CONCENTRATION</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="content">
+                                <div class="content-item">
+                                    <div>LOT NO.</div>
+                                    <div>2</div>
+                                </div>
+                                <div class="content-item">
+                                    <div>LOT NO.</div>
+                                    <div>2</div>
+                                </div>
+                                <div class="content-item">
+                                    <div>EXPIRATION DATE</div>
+                                    <div>01-01-1</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="content">
+                                <div class="content-item">
+                                    <div class="padding-top-bottom">CO (ppm)</div>
+                                    <div class="padding-top-bottom">O2 (%)</div>
+                                    <div class="padding-top-bottom">H2S (ppb)</div>
+                                    <div class="padding-top-bottom">CO (%)</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="content">
+                                <div class="content-item">
+                                    <div class="padding-top-bottom">3.5</div>
+                                    <div class="padding-top-bottom">4.5</div>
+                                    <div class="padding-top-bottom">6.5</div>
+                                    <div class="padding-top-bottom">3.5</div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="content">
+                                <div class="content-item">
+                                    <div>LOT NO.</div>
+                                    <div>2</div>
+                                </div>
+                                <div class="content-item">
+                                    <div>LOT NO.</div>
+                                    <div>2</div>
+                                </div>
+                                <div class="content-item">
+                                    <div>EXPIRATION DATE</div>
+                                    <div>01-01-1</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="content">
+                                <div class="content-item">
+                                    <div class="padding-top-bottom">CO (ppm)</div>
+                                    <div class="padding-top-bottom">O2 (%)</div>
+                                    <div class="padding-top-bottom">H2S (ppb)</div>
+                                    <div class="padding-top-bottom">CO (%)</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="content">
+                                <div class="content-item">
+                                    <div class="padding-top-bottom">3.5</div>
+                                    <div class="padding-top-bottom">4.5</div>
+                                    <div class="padding-top-bottom">6.5</div>
+                                    <div class="padding-top-bottom">3.5</div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        @*Span calibration Info*@
+        <div class="calibration-result-container">
+            <table class="table-data">
+                <thead>
+                    <tr class="section-head">
+                        <th>
+                            <div class="padding-left">SPAN CALIBRATION RESULTS</div>
+                        </th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th>
+                            <div>READING</div>
+                        </th>
+                        <th>
+                            <div>READING</div>
+                        </th>
+                    </tr>
+                    <tr class="section-sub-head">
+                        <th>
+                            <div class="padding-left">SENSORS ENABLED</div>
+                        </th>
+                        <th>
+                            <div>GAS (INLET)</div>
+                        </th>
+                        <th>
+                            <div>RESULT</div>
+                        </th>
+                        <th>
+                            <div>CONCENTRATION</div>
+                        </th>
+                        <th>
+                            <div>BEFORE CALIBRATION</div>
+                        </th>
+                        <th>
+                            <div>AFTER CALIBRATION</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="padding-left padding-top-bottom">True</div>
+                        </td>
+                        <td>
+                            <div>O2</div>
+                        </td>
+                        <td>
+                            <div>32%</div>
+                        </td>
+                        <td>
+                            <div>8.5%</div>
+                        </td>
+                        <td>
+                            <div>10.2%</div>
+                        </td>
+                        <td>
+                            <div>10.2%</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="padding-left padding-top-bottom">True</div>
+                        </td>
+                        <td>
+                            <div>O2</div>
+                        </td>
+                        <td>
+                            <div>32%</div>
+                        </td>
+                        <td>
+                            <div>8.5%</div>
+                        </td>
+                        <td>
+                            <div>10.2%</div>
+                        </td>
+                        <td>
+                            <div>10.2%</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        @*Sensor Info*@
+        <table class="table-data">
+            <thead>
+                <tr>
+                    <th colspan="4"><div class="section-head">Sensor Information</div></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="col-sub-section-3">
+                            <div class="sub-section-head">SENSOR INSTALLED</div>
+                            <div class="sub-section-content">ABC (Undefined)</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="padding-top-bottom">
+                            <div class="col-sub-section-3">
+                                <div class="sub-section-head">STATUS</div>
+                                <div class="sub-section-content">Disabled</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="col-sub-section-3">
+                                <div class="sub-section-head">SERIAL NUMBER</div>
+                                <div class="sub-section-content">ASDAFFFG</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="padding-top-bottom">
+                            <div class="col-sub-section-3">
+                                <div class="sub-section-head">NEXT CALIBRATION DUE</div>
+                                <div class="sub-section-content">01-01-1 05:32</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="col-sub-section-3">
+                                <div class="sub-section-head">WARRANTY EXPIRES</div>
+                                <div class="sub-section-content">01-01-1 05:32</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-sub-section-3">
+                            <div class="sub-section-head">DUE IN</div>
+                            <div class="sub-section-content">-25 Days</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="col-sub-section-3">
+                            <div class="sub-section-head">SENSOR INSTALLED</div>
+                            <div class="sub-section-content">ABC (Undefined)</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="padding-top-bottom">
+                            <div class="col-sub-section-3">
+                                <div class="sub-section-head">STATUS</div>
+                                <div class="sub-section-content">Disabled</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="col-sub-section-3">
+                                <div class="sub-section-head">SERIAL NUMBER</div>
+                                <div class="sub-section-content">ASDAFFFG</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="padding-top-bottom">
+                            <div class="col-sub-section-3">
+                                <div class="sub-section-head">NEXT CALIBRATION DUE</div>
+                                <div class="sub-section-content">01-01-1 05:32</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="col-sub-section-3">
+                                <div class="sub-section-head">WARRANTY EXPIRES</div>
+                                <div class="sub-section-content">01-01-1 05:32</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-sub-section-3">
+                            <div class="sub-section-head">DUE IN</div>
+                            <div class="sub-section-content">-25 Days</div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        @*Sensor Data Info*@
+        <table class="table-data">
+            <thead>
+                <tr>
+                    <th>
+                        <div class="section-head">Alarm setting</div>
+                    </th>
+                    <th>
+                        <div class="section-head">Low</div>
+                    </th>
+                    <th>
+                        <div class="section-head">High</div>
+                    </th>
+                    <th>
+                        <div class="section-head">Stel</div>
+                    </th>
+                    <th>
+                        <div class="section-head">TWa</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="padding-left padding-top-bottom">ABC</div>
+                    </td>
+                    <td>
+                        <div class="padding-left padding-top-bottom"></div>12
+                    </td>
+                    <td>
+                        <div class="padding-left padding-top-bottom">13</div>
+                    </td>
+                    <td>
+                        <div class="padding-left padding-top-bottom">15</div>
+                    </td>
+                    <td>
+                        <div class="padding-left padding-top-bottom">17</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="padding-left padding-top-bottom">ABC</div>
+                    </td>
+                    <td>
+                        <div class="padding-left padding-top-bottom"></div>12
+                    </td>
+                    <td>
+                        <div class="padding-left padding-top-bottom">13</div>
+                    </td>
+                    <td>
+                        <div class="padding-left padding-top-bottom">15</div>
+                    </td>
+                    <td>
+                        <div class="padding-left padding-top-bottom">17</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
